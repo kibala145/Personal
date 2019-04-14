@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw?
 
 # Some helpers
-7-1_style_example
+src/7-1_style_example
