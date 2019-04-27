@@ -1,4 +1,7 @@
 # personal
+```
+Master branch is used to serve docs folder for github pages.
+```
 
 ## Project setup
 ```
