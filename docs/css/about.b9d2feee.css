@@ -1,0 +1,1 @@
+.star-icon{fill:#e8e8e8}.star-icon--active{fill:#daa520;-webkit-animation:starsColor 2s ease-in 1;animation:starsColor 2s ease-in 1}@-webkit-keyframes starsColor{0%{fill:#e8e8e8}to{fill:#daa520}}@keyframes starsColor{0%{fill:#e8e8e8}to{fill:#daa520}}
