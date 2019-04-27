@@ -1,0 +1,9 @@
+.page-content {
+  min-height: 100vh;
+  padding: 3rem 20px 20px;
+  @include lg() {
+    margin-top: 5rem;
+    margin-left: 320px;
+    padding-top: 20px;
+  }
+}
