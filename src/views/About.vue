@@ -35,6 +35,9 @@
           <li>
             Css transition for smooth transition
           </li>
+          <li>
+            Responsive
+          </li>
         </ol>
       </li>
     </ul>

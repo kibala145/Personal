@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Skills from './views/Skills.vue'
+import About from './views/About.vue'
+import Playground from './views/Playground.vue'
 
 Vue.use(Router)
 
@@ -16,7 +19,7 @@ export default new Router({
     {
       path: '/skills',
       name: 'skills',
-      component: () => import(/* webpackChunkName: "about" */ './views/Skills.vue')
+      component: Skills
     },
     {
       path: '/about',
@@ -24,7 +27,7 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: About
     },
     {
       path: '/learning',
@@ -34,11 +37,11 @@ export default new Router({
     {
       path: '/playground',
       name: 'playground',
-      component: () => import(/* webpackChunkName: "playground" */ './views/Playground.vue')
+      component: Playground
     },
   ],
-  scrollBehavior (to, from, savedPosition) {
-    return new Promise((resolve, reject) => {
+  scrollBehavior () {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ x: 0, y: 0 })
       }, 0) //set timeout to 2x value of fade transition
