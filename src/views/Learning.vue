@@ -53,6 +53,12 @@
             description: 'Official vue guide. Every time I read it I learn something new. Most useful one.',
             link: 'https://vuejs.org/v2/guide/',
             priority: 1,
+          },
+          {
+            title: 'Vue.js style guide',
+            description: 'Official vue style guide. Very useful one. Standing by this rules keeps your code clean.',
+            link: 'https://vuejs.org/v2/style-guide/',
+            priority: 1,
           }
         ]
       }

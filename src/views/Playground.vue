@@ -14,13 +14,16 @@
       <option value="in-out">In-out</option>
     </select>
     <br>
-    <input id="checkboxPaired" type="checkbox" v-model="paired.checked">
+    <base-switch
+            :id="'checkboxPaired'"
+            :value.sync="paired.checked"
+    />
     <custom-transition :transition-name="paired.transitionName" :transition-mode="paired.transitionMode">
       <div v-if="paired.checked" :key="1">
-        <label for="checkboxPaired">Checked</label>
+        Checked
       </div>
       <div v-if="!paired.checked" :key="2">
-        <label for="checkboxPaired">Not checked</label>
+        Not checked
       </div>
     </custom-transition>
     <h2>Single element transitions: </h2>
@@ -36,18 +39,28 @@
       <option value="in-out">In-out</option>
     </select>
     <br>
-    <input id="checkboxSingle" type="checkbox" v-model="single.checked">
+    <base-switch
+            :id="'checkboxSingle'"
+            :value.sync="single.checked"
+    />
     <custom-transition :transition-name="single.transitionName" :transition-mode="single.transitionMode">
       <div v-show="single.checked" :key="1">
-        <label for="checkboxSingle">Checked</label>
+        Checked
       </div>
     </custom-transition>
-
+    <br>
+    <base-switch
+      :id="'exampleSwitch'"
+      :value.sync="exampleSwitchValue"
+    />
+    {{exampleSwitchValue}}
   </div>
 </template>
 
 <script>
   import CustomTransition from '@/components/helpers/CustomTransition'
+  import BaseSwitch from '@/components/base/BaseSwitch'
+
   /*import IconBase from '@/components/icons/IconBase'
   import IconRisha from '@/components/icons/IconRisha'*/
 
@@ -64,11 +77,13 @@
           checked: false,
           transitionName: 'fade',
           transitionMode: 'out-in'
-        }
+        },
+        exampleSwitchValue: false,
       }
     },
     components: {
       CustomTransition,
+        BaseSwitch,
       /*IconRisha,
       IconBase*/
     }
