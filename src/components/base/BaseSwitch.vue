@@ -2,9 +2,9 @@
     <div class="base-switch">
         <input
             :id="id"
+            :checked="value"
             type="checkbox"
             class="base-switch__input"
-            :checked="value"
             @change="$emit('update:value', $event.target.checked)"
         >
         <label
