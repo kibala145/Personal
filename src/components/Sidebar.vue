@@ -20,7 +20,6 @@
 <script>
   /* eslint-disable */
   // import ClickOutside from '@/directives/ClickOutside'
-  import Sidebar from '@/helpers/Sidebar'
   import TransitionFade from '@/components/helpers/CustomTransition'
 
   export default {
@@ -63,7 +62,9 @@
       }
     },
     methods: {
-      closeSidebar: Sidebar.close,
+      closeSidebar() {
+        this.$store.commit('SIDEBAR_CLOSE');
+      }
     }
   }
 </script>

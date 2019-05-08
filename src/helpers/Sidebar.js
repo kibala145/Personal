@@ -1,3 +1,4 @@
+/*
 export default {
   open() {
     this.$store.commit('SIDEBAR_OPEN');
@@ -6,3 +7,4 @@ export default {
     this.$store.commit('SIDEBAR_CLOSE');
   }
 }
+*/

@@ -17,6 +17,9 @@
     display: none;
     font-size: 2.5rem;
   }
+  &__hamburger {
+    display: flex;
+  }
   @include lg() {
     height: 5rem;
     border-bottom: 1px solid #eaecef;
