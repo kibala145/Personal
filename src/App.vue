@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-swipe.right="sidebarOpen" v-swipe.left="sidebarClose">
-    <header-bar></header-bar>
-    <sidebar @click.prevent></sidebar>
+    <header-bar @header-click="pageClickHandler"/>
+    <sidebar/>
     <div class="page-content" @click="pageClickHandler">
       <custom-transition transition-name="fade">
         <router-view/>

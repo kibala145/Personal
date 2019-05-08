@@ -1,5 +1,8 @@
 <template>
-  <div class="sidebar" :class="{'sidebar--open': sidebarOpen}">
+  <div
+    class="sidebar"
+    :class="{'sidebar--open': sidebarOpen}"
+  >
     <ul id="nav" class="sidebar__navigation navigation">
       <li v-for="link in links" :key="link.value">
         <router-link

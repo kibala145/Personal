@@ -1,8 +1,8 @@
 .page-content {
-  padding: 3rem 20px 20px;
+  height: 100vh;
+  padding-top: 3rem;
   @include lg() {
-    margin-top: 5rem;
-    margin-left: 320px;
-    padding-top: 20px;
+    padding-top: 5rem;
+    padding-left: 320px;
   }
 }
