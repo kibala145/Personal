@@ -16,7 +16,6 @@
 
 <script>
   import store from './store/store'
-  import SidebarHelpers from '@/helpers/Sidebar'
   import HeaderBar from '@/components/HeaderBar'
   import Sidebar from '@/components/Sidebar'
   import Swipe from '@/directives/Swipe'
@@ -33,14 +32,18 @@
       Swipe
     },
     methods: {
-      sidebarClose: SidebarHelpers.close,
+      sidebarClose() {
+        this.$store.commit('SIDEBAR_CLOSE');
+      },
+      sidebarOpen() {
+        this.$store.commit('SIDEBAR_OPEN');
+      },
       pageClickHandler(e) {
         if (this.$store.state.sidebarOpen) {
           this.sidebarClose();
           e.preventDefault();
         }
-      },
-      sidebarOpen: SidebarHelpers.open
+      }
     }
   }
 </script>
