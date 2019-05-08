@@ -1,5 +1,8 @@
 <template>
-  <div class="header-bar">
+  <div
+    class="header-bar"
+    @click="$emit('header-click')"
+  >
     <icon-base class="header-bar__hamburger" @click="openSidebar">
       <icon-hamburger></icon-hamburger>
     </icon-base>
