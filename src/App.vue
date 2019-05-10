@@ -4,7 +4,8 @@
     <sidebar v-click-outside="sidebarClose"/>
     <div class="page-content">
       <custom-transition transition-name="fade">
-        <router-view/>
+        <base-spinner v-if="$store.state.routeLoading" />
+        <router-view v-else />
       </custom-transition>
     </div>
   </div>
@@ -21,13 +22,15 @@
   import Swipe from '@/directives/Swipe'
   import ClickOutside from '@/directives/ClickOutside'
   import CustomTransition from '@/components/helpers/CustomTransition'
+  import BaseSpinner from '@/components/base/BaseSpinner'
 
   export default {
     store,
     components: {
       Sidebar,
       HeaderBar,
-      CustomTransition
+      CustomTransition,
+      BaseSpinner
     },
     directives: {
       Swipe,

@@ -1,3 +1,4 @@
 export default {
-  sidebarOpen: false
+  sidebarOpen: false,
+  routeLoading: false
 }

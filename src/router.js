@@ -4,10 +4,11 @@ import Home from './views/Home.vue'
 import Skills from './views/Skills.vue'
 import About from './views/About.vue'
 import Playground from './views/Playground.vue'
+import LoadingComponent from './components/base/BaseSpinner'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -32,7 +33,7 @@ export default new Router({
     {
       path: '/learning',
       name: 'learning',
-      component: () => import(/* webpackChunkName: "learning" */ './views/Learning.vue')
+      component: () => import( './views/Learning.vue')
     },
     {
       path: '/playground',
@@ -42,14 +43,33 @@ export default new Router({
     {
       path: '/todos',
       name: 'todos',
-      component: () => import(/* webpackChunkName: "todos" */ './views/Todos.vue')
+      component: () => ({
+        // The component to load (should be a Promise)
+        component: import('./views/Todos.vue'),
+        // A component to use while the async component is loading
+        loading: LoadingComponent,
+        // Delay before showing the loading component. Default: 200ms.
+        delay: 200
+      })
     },
   ],
-  scrollBehavior () {
+  scrollBehavior: () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({ x: 0, y: 0 })
       }, 0) //set timeout to 2x value of fade transition
     })
   }
-})
+});
+
+// router.beforeEach((to, from, next) => {
+// });
+
+// router.afterEach((to, from, next) => {
+//   debugger
+//   setTimeout(() =>
+//     this.$store.commit('ROUTE_READY'), 1500) // timeout for demo purposes
+//   next()
+// });
+
+export default router;
