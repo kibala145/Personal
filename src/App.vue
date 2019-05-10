@@ -4,7 +4,7 @@
     <sidebar v-click-outside="sidebarClose"/>
     <div class="page-content">
       <custom-transition transition-name="fade">
-        <base-spinner v-if="$store.state.routeLoading" />
+        <base-spinner v-if="$root.loading" />
         <router-view v-else />
       </custom-transition>
     </div>

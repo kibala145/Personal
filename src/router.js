@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Skills from './views/Skills.vue'
 import About from './views/About.vue'
 import Playground from './views/Playground.vue'
-import LoadingComponent from './components/base/BaseSpinner'
+import BaseSpinner from './components/base/BaseSpinner.vue'
 
 Vue.use(Router)
 
@@ -44,10 +44,15 @@ const router = new Router({
       path: '/todos',
       name: 'todos',
       component: () => ({
-        // The component to load (should be a Promise)
-        component: import('./views/Todos.vue'),
         // A component to use while the async component is loading
-        loading: LoadingComponent,
+        loading: BaseSpinner,
+        error: BaseSpinner,
+        // The component to load (should be a Promise)
+        component: new Promise(resolve => {
+          setTimeout(() => {
+            return import('./views/Todos.vue').then(data => resolve(data))
+          }, 3000)
+        }),
         // Delay before showing the loading component. Default: 200ms.
         delay: 200
       })
@@ -61,15 +66,5 @@ const router = new Router({
     })
   }
 });
-
-// router.beforeEach((to, from, next) => {
-// });
-
-// router.afterEach((to, from, next) => {
-//   debugger
-//   setTimeout(() =>
-//     this.$store.commit('ROUTE_READY'), 1500) // timeout for demo purposes
-//   next()
-// });
 
 export default router;

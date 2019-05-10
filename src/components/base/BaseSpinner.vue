@@ -105,3 +105,9 @@
         }
   }
 </style>
+
+<script>
+  export default {
+    name: 'BaseSpinner',
+  }
+</script>

@@ -68,7 +68,7 @@
       todoButtonHandler(todo) {
         todo.done ? this.$store.commit('TODO_DONE', todo) : this.$store.commit('TODO_UNDONE', todo);
       }
-    }
+    },
   }
 </script>
 
