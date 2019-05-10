@@ -46,6 +46,10 @@
           {
             title: 'Playground',
             value: '/playground'
+          },
+          {
+            title: 'Todos',
+            value: '/todos'
           }
         ]
       }

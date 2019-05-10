@@ -32,12 +32,17 @@ export default new Router({
     {
       path: '/learning',
       name: 'learning',
-      component: () => import(/* webpackChunkName: "about" */ './views/Learning.vue')
+      component: () => import(/* webpackChunkName: "learning" */ './views/Learning.vue')
     },
     {
       path: '/playground',
       name: 'playground',
       component: Playground
+    },
+    {
+      path: '/todos',
+      name: 'todos',
+      component: () => import(/* webpackChunkName: "todos" */ './views/Todos.vue')
     },
   ],
   scrollBehavior () {

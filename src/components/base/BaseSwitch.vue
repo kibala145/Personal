@@ -61,7 +61,7 @@
       }
     }
     &__input:checked + &__slider {
-      background-color: #2196F3;
+      background-color: #ff9100;
     }
     &__input:checked + &__slider:before {
       transform: translateX(3rem);
