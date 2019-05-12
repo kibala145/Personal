@@ -16,8 +16,8 @@
     </select>
     <br>
     <base-switch
-            :id="'checkboxPaired'"
-            :value.sync="paired.checked"
+      :id="'checkboxPaired'"
+      :value.sync="paired.checked"
     />
     <custom-transition :transition-name="paired.transitionName" :transition-mode="paired.transitionMode">
       <div v-if="paired.checked" :key="1">
