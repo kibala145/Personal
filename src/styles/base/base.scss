@@ -48,3 +48,11 @@ svg {
   height: 1.8rem;
   width: 1.8rem;
 }
+
+input[type=text],
+textarea,
+select,
+select:focus
+{
+  font-size: 1.6rem;
+}

@@ -1,5 +1,8 @@
 <template>
-  <div class="base-switch">
+  <div
+    :class="classArray"
+    class="base-switch"
+  >
     <input
       :id="id"
       :checked="value"
@@ -9,7 +12,8 @@
     >
     <label
       :for="id"
-      class="base-switch__slider">
+      class="base-switch__slider"
+    >
     </label>
   </div>
 </template>
@@ -25,6 +29,15 @@
       id: {
         type: String,
         required: true
+      },
+      classArray: {
+        type: Array,
+        default: () => ([]),
+        validator: function (value) {
+          const availableClasses = ['round', 'blue'];
+
+          return value.every(item => availableClasses.indexOf(item) !== -1)
+        }
       }
     }
   }
@@ -62,9 +75,20 @@
     }
     &__input:checked + &__slider {
       background-color: #ff9100;
+
     }
     &__input:checked + &__slider:before {
       transform: translateX(3rem);
+    }
+    //Additional classes
+    &.blue &__input:checked + &__slider{
+      background-color: #80d8ff;
+    }
+    &.round .base-switch__slider{
+      border-radius: 34px;
+      &:before {
+        border-radius: 50%;
+      }
     }
   }
 </style>
