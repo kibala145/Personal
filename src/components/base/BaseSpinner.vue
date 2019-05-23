@@ -19,6 +19,7 @@
     align-items: center;
   }
   .sk-folding-cube {
+    top: 2px;
     width: 40px;
     height: 40px;
     position: relative;

@@ -36,7 +36,8 @@
             :id="`done-handler-${item.text}`"
             :value.sync="item.done"
             @update:value="todoButtonHandler(item)"
-            :class-array="['round', 'blue']"
+            color="blue"
+            round
           />
           <button @click="$store.commit('REMOVE_TODO', item)">remove</button>
         </div>

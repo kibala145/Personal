@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="classArray"
+    :class="classObject"
     class="base-switch"
   >
     <input
@@ -30,13 +30,28 @@
         type: String,
         required: true
       },
-      classArray: {
-        type: Array,
-        default: () => ([]),
-        validator: function (value) {
-          const availableClasses = ['round', 'blue'];
+      color: {
+        type: String,
+        default: 'orange',
+        validator(value) {
+          const COLORS = [
+            'blue',
+            'orange'
+          ];
 
-          return value.every(item => availableClasses.indexOf(item) !== -1)
+          return COLORS.indexOf(value) !== -1;
+        }
+      },
+      round: {
+        type: Boolean,
+        default: false
+      }
+    },
+    computed:{
+      classObject() {
+        return {
+          round: this.round,
+          blue: this.color === 'blue'
         }
       }
     }
