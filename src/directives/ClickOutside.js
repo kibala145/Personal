@@ -7,9 +7,13 @@ export default {
         vnode.context[binding.expression](event);
       }
     };
-    document.body.addEventListener('click', el.clickOutsideEvent)
+    document.body.addEventListener(deviceEventType, el.clickOutsideEvent)
   },
   unbind: function (el) {
-    document.body.removeEventListener('click', el.clickOutsideEvent)
+    document.body.removeEventListener(deviceEventType, el.clickOutsideEvent)
   },
 }
+
+const deviceEventType = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  ? 'touchstart'
+  : 'click';
