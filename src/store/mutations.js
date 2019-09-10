@@ -5,10 +5,10 @@ export default {
   SIDEBAR_CLOSE(state) {
     state.sidebarOpen = false;
   },
-  ROUTE_LOADING(state) {
+  /*ROUTE_LOADING(state) {
     state.routeLoading = true;
   },
   ROUTE_READY(state) {
     state.routeLoading = false;
-  }
+  }*/
 }
