@@ -26,13 +26,13 @@
     name: 'Sidebar',
     data() {
       return {
-        links: [
+       /* links: [
           {
-            title: 'Home',
+            title: this.$t('home'),
             value: '/'
           },
           {
-            title: 'Skills',
+            title: this.$t('skills'),
             value: '/skills'
           },
           {
@@ -51,7 +51,7 @@
             title: 'Todos',
             value: '/todos'
           }
-        ]
+        ]*/
       }
     },
     components: {
@@ -63,6 +63,38 @@
     computed: {
       sidebarOpen() {
         return this.$store.state.sidebarOpen;
+      },
+      links() {
+        return [
+          {
+            title: this.$t('home'),
+            value: '/'
+          },
+          {
+            title: this.$t('skills'),
+            value: '/skills'
+          },
+          {
+            title: this.$t('learning'),
+            value: '/learning'
+          },
+          {
+            title: this.$t('about'),
+            value: '/about'
+          },
+          {
+            title: this.$t('playground'),
+            value: '/playground'
+          },
+          {
+            title: this.$t('todos'),
+            value: '/todos'
+          },
+          {
+            title: this.$t('blog'),
+            value: '/blog'
+          }
+        ]
       }
     },
     methods: {

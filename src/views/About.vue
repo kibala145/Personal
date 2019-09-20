@@ -21,6 +21,12 @@
           <li>
             Inject svg inline as Vue component
           </li>
+          <li>
+            I18n lang module usage (translations loaded asynchronously)
+          </li>
+          <li>
+            Language being kept in local storage
+          </li>
         </ol>
       </li>
       <li>

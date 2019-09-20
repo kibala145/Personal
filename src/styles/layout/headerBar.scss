@@ -5,7 +5,8 @@
   z-index: 1;
   //box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.15);
   align-items: center;
-  padding: 0 10px;
+  justify-content: space-between;
+  padding: 0 1rem;
   top: 0;
   left: 0;
   right: 0;
@@ -22,7 +23,7 @@
   }
   @include lg() {
     height: 5rem;
-    border-bottom: 1px solid #eaecef;
+    border-bottom: .1rem solid #eaecef;
     &__hamburger {
       display: none;
     }

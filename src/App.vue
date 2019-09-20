@@ -1,8 +1,17 @@
 <template>
-  <div id="app" v-swipe.right="sidebarOpen" v-swipe.left="sidebarClose">
+  <div
+    id="app"
+    v-if="langReady"
+    v-swipe.right="sidebarOpen"
+    v-swipe.left="sidebarClose"
+  >
     <header-bar/>
-    <sidebar v-click-outside="sidebarClose"/>
-    <div class="page-content">
+    <sidebar
+      v-click-outside="sidebarClose"
+    />
+    <div
+      class="page-content"
+    >
       <custom-transition transition-name="fade">
         <base-spinner v-if="$root.loading" />
         <router-view v-else />
@@ -23,6 +32,7 @@
   import ClickOutside from '@/directives/ClickOutside'
   import CustomTransition from '@/components/helpers/CustomTransition'
   import BaseSpinner from '@/components/base/BaseSpinner'
+  import {i18n, loadLanguageAsync} from "./i18n";
 
   export default {
     store,
@@ -43,6 +53,14 @@
       sidebarOpen() {
         this.$store.commit('SIDEBAR_OPEN');
       }
+    },
+    computed: {
+      langReady() {
+        return !(Object.keys(i18n.messages).length === 0 && i18n.messages.constructor === Object)
+      }
+    },
+    mounted() {
+      loadLanguageAsync(this.$store.state.client.lang);
     }
   }
 </script>

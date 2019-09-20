@@ -3,8 +3,12 @@
     <icon-base
       v-for="index in totalValue"
       :key="index"
+      :icon-name="$t('star')"
       class="star-icon"
-      :class="{'star-icon--active': index <= activeValue}">
+      :class="{'star-icon--active': index <= activeValue}"
+      width="1.8rem"
+      height="1.8rem"
+    >
       <icon-star></icon-star>
     </icon-base>
   </div>

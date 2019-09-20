@@ -1,3 +1,10 @@
 {
-  "message": "hello i18n !!"
+  "home": "Home",
+  "skills": "Skills",
+  "learning": "Learning",
+  "todos": "Todos",
+  "playground": "Playground",
+  "about": "About",
+  "star": "star",
+  "blog": "Blog"
 }
