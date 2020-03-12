@@ -5,6 +5,9 @@ export default {
   SIDEBAR_CLOSE(state) {
     state.sidebarOpen = false;
   },
+  SET_DARK_MODE(state, value) {
+    state.darkMode = value
+  }
   /*ROUTE_LOADING(state) {
     state.routeLoading = true;
   },

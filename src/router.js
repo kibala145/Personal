@@ -5,7 +5,7 @@ import BaseSpinner from './components/base/BaseSpinner.vue'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {

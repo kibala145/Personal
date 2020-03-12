@@ -6,5 +6,32 @@
   "playground": "Playground",
   "about": "About",
   "star": "star",
-  "blog": "Blog"
+  "blog": "Blog",
+  "remove": "remove",
+  "remove_all": "remove all",
+  "views": {
+    "home": {
+      "header": "Web developer from Kaliningrad, Russia",
+      "phrase": "Passionate about learning"
+    },
+    "skills": {
+      "header": "Something I can do"
+    },
+    "learning": {
+      "header": "Here I keep some useful articles"
+    },
+    "about": {
+      "header": "Some facts about this website",
+      "phrase": "What I've used so far"
+    },
+    "playground": {
+      "header": "Playground",
+      "phrase": "Pair element transitions"
+    },
+    "todos": {
+      "header": "Simple 'TODO' using local storage",
+      "new_task": "New task",
+      "created_tasks": "Created tasks"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="learning">
-    <h1>Here i keep some useful articles</h1>
+    <h1>{{$t('views.learning.header')}}</h1>
     <div class="learning__wrapper">
       <div
         v-for="(article, $index) in usefulArticles"

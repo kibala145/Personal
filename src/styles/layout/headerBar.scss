@@ -20,6 +20,35 @@
   }
   &__hamburger {
     display: flex;
+    & svg {
+      fill: #2c3e50;
+    }
+  }
+  &__controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    @include lg() {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+  }
+  &__right-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: .8rem;
+    @include lg() {
+      margin-left: 0;
+    }
+    & > div {
+      margin-right: .8rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
   @include lg() {
     height: 5rem;

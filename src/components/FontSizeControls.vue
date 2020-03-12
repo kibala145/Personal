@@ -4,13 +4,17 @@
       class="font-size-controls__button"
       @click="minus()"
     >
-      -
+      <div class="font-size-controls__button-content">
+        -
+      </div>
     </button>
     <button
       class="font-size-controls__button"
       @click="plus()"
     >
-      +
+      <div class="font-size-controls__button-content">
+        +
+      </div>
     </button>
   </div>
 </template>
@@ -41,9 +45,21 @@
 
 <style lang="scss" scoped>
   .font-size-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &__button-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
     &__button {
       border: none;
       margin-right: .2rem;
+      padding: 0;
       &:last-child {
         margin-right: 0;
       }

@@ -1,6 +1,7 @@
 <template>
   <div
     id="app"
+    :class="{'dark-mode': darkMode}"
     v-if="langReady"
     v-swipe.right="sidebarOpen"
     v-swipe.left="sidebarClose"
@@ -32,7 +33,8 @@
   import ClickOutside from '@/directives/ClickOutside'
   import CustomTransition from '@/components/helpers/CustomTransition'
   import BaseSpinner from '@/components/base/BaseSpinner'
-  import {i18n, loadLanguageAsync} from "./i18n";
+  import {i18n, loadLanguageAsync} from "./i18n"
+  import {mapState} from 'vuex'
 
   export default {
     store,
@@ -55,6 +57,9 @@
       }
     },
     computed: {
+      ...mapState({
+        darkMode: state => state.darkMode
+      }),
       langReady() {
         return !(Object.keys(i18n.messages).length === 0 && i18n.messages.constructor === Object)
       }

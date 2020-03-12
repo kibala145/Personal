@@ -1,6 +1,6 @@
 <template>
   <div class="skills">
-    <h1>Something I can do:</h1>
+    <h1>{{$t('views.skills.header')}}</h1>
     <div class="skills__list">
       <div
         v-for="(skill, $index) in skills"
@@ -75,9 +75,6 @@
   @keyframes starsColor {
     0% {
       fill: #e8e8e8;
-    }
-    100% {
-      fill: #DAA520;
     }
   }
 </style>

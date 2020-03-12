@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1>Some facts about this website.</h1>
-    <h2>What I've used so far:</h2>
+    <h1>{{$t('views.about.header')}}</h1>
+    <h2>{{$t('views.about.phrase')}}</h2>
     <ul>
       <li>
         Vue features:

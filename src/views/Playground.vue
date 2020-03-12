@@ -1,7 +1,7 @@
 <template>
   <div class="playground">
-    <h1>Playground</h1>
-    <h2>Pair element transitions: </h2>
+    <h1>{{$t('views.playground.header')}}</h1>
+    <h2>{{$t('views.playground.phrase')}}</h2>
     <span>Transition name:</span>
     <select v-model="paired.transitionName">
       <option value="fade">Fade</option>
@@ -18,14 +18,14 @@
     <base-switch
       :id="'checkboxPaired'"
       :value.sync="paired.checked"
-    />
+    /><br>
     <custom-transition :transition-name="paired.transitionName" :transition-mode="paired.transitionMode">
-      <div v-if="paired.checked" :key="1">
+      <span v-if="paired.checked" :key="1">
         Checked
-      </div>
-      <div v-if="!paired.checked" :key="2">
+      </span>
+      <span v-if="!paired.checked" :key="2">
         Not checked
-      </div>
+      </span>
     </custom-transition>
   </div>
 </template>

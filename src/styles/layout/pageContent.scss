@@ -1,6 +1,6 @@
 .page-content {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 3rem;
   @include lg() {
     padding-top: 5rem;

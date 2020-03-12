@@ -9,8 +9,13 @@
       </icon-base>
     </div>
     <!--<span class="header-bar__title">Personal header</span>-->
-    <language-switch />
-    <font-size-controls />
+    <div class="header-bar__controls-container">
+      <language-switch />
+      <div class="header-bar__right-area">
+        <dark-mode-controls />
+        <font-size-controls />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -19,6 +24,7 @@
   import IconHamburger from '@/components/icons/IconHamburger'
   import LanguageSwitch from '@/components/LanguageSwitch'
   import FontSizeControls from '@/components/FontSizeControls'
+  import DarkModeControls from '@/components/DarkModeControls'
 
   export default {
     name: 'HeaderBar',
@@ -26,7 +32,8 @@
       IconBase,
       IconHamburger,
       LanguageSwitch,
-      FontSizeControls
+      FontSizeControls,
+      DarkModeControls
     },
     methods: {
       openSidebar() {

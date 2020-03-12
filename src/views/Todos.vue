@@ -1,13 +1,13 @@
 <template>
   <div class="todos">
-    <h1>Simple 'TODO' using local storage.</h1>
-    <h2>New task:</h2>
+    <h1>{{$t('views.todos.header')}}</h1>
+    <h2>{{$t('views.todos.new_task')}}</h2>
     <input
       type="text"
       v-model="todo"
       @keydown.enter="$store.commit('CREATE_TODO', todo); todo = '';"
     >
-    <h2>Created tasks: </h2>
+    <h2>{{$t('views.todos.created_tasks')}}</h2>
 
     <transition-group
       name="list-complete"
@@ -39,12 +39,12 @@
             color="blue"
             round
           />
-          <button @click="$store.commit('REMOVE_TODO', item)">remove</button>
+          <button @click="$store.commit('REMOVE_TODO', item)">{{$t('remove')}}</button>
         </div>
       </div>
 
     </transition-group>
-    <button @click="$store.commit('CLEAR_ALL_TODOS')">Remove all</button>
+    <button @click="$store.commit('CLEAR_ALL_TODOS')">{{$t('remove_all')}}</button>
   </div>
 </template>
 
@@ -107,7 +107,7 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
-        outline: none;
+        // outline: none;
       }
     }
     &__items-container {
