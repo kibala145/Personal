@@ -11,12 +11,10 @@
 
 <style>
   .spinner-container {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .sk-folding-cube {
     top: 2px;

@@ -7,11 +7,22 @@
 }
 // dark mode
 .dark-mode {
+  .watches {
+    &__background {
+      background-color: green;
+    }
+    &__hour-hand, &__center, &__second-hand, &__minute-hand {
+      background-color: #212121;
+    }
+  }
+  .base-switch__input:checked + .base-switch__slider {
+    background-color: green!important;
+  }
   .sidebar, .header-bar, .page-content {
-    background-color: black;
+    background-color: #212121;
     border-color: #E0E0E0;
     select {
-      background-color: black;
+      background-color: #212121;
       color: #E0E0E0;
     }
     span, h1, h2, a:not(.learning__article-card), ul {

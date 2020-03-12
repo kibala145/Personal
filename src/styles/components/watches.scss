@@ -8,8 +8,10 @@
     background-color: #eaecef;
     border-radius: 50%;
   }
+  &__hand, &__background, &__center {
+    transition: all .3s cubic-bezier(.25, -0.5, .75, 1.5);
+  }
   &__hand {
-    transition: transform .3s cubic-bezier(.25, -0.5, .75, 1.5);
     border-radius: 10rem;
   }
   &__hour-hand {
